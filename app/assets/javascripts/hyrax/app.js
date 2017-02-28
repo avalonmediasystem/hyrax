@@ -61,8 +61,7 @@ Hyrax = {
     },
 
     saveWorkFixed: function () {
-        // Setting test to false to skip native and go right to polyfill
-        FixedSticky.tests.sticky = false;
+        // Fixedsticky will polyfill position:sticky
         $('#savewidget').fixedsticky();
     },
 

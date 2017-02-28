@@ -4,12 +4,25 @@ module Hyrax
     # TODO: merge with CurationConcernController
     include Hyrax::CurationConcernController
 
+    included do
+      layout :decide_layout
+    end
+
     def new
       curation_concern.depositor = current_user.user_key
       super
     end
 
     protected
+
+      def decide_layout
+        case action_name
+        when 'show'
+          theme
+        else
+          'dashboard'
+        end
+      end
 
       # Add uploaded_files to the parameters received by the actor.
       def attributes_for_actor
