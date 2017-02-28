@@ -62,7 +62,7 @@ fieldset {
 
 .constraints-container {
   padding: $panel-heading-padding;
-  
+
   .start-over {
     padding: 4px 6px;
   }
@@ -100,6 +100,16 @@ fieldset {
   }
 }
 
+.user-activity .panel-body {
+  overflow: scroll;
+  max-height: 20em;
+}
+
+.transfer_link {
+  margin-top: 8px;
+}
+
+
 .sidebar {
   padding: 0 $admin-vertical-padding;
 
@@ -129,6 +139,31 @@ fieldset {
       .profile-data-name {
         color: $admin-sidebar-link-color;
       }
+    }
+  }
+}
+
+// submenu items
+ul.collapse > li > a,
+ul.collapsing > li > a {
+  padding-left: 25px;
+}
+
+.sidebar .collapse-toggle {
+  margin-bottom: 0;
+
+  &::after {
+    content: "❯";
+    float: right;
+    transform: rotate(90deg);
+  }
+
+  &.collapsed {
+    border-bottom: 0;
+
+    &::after {
+      transform: rotate(0deg);
+      transition: transform 0.1s ease;
     }
   }
 }
