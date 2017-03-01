@@ -10,6 +10,14 @@ $admin-sidebar-link-hover-color: #000000 !default;
 $admin-content-background-color: #f0f0f0 !default;
 $admin-vertical-padding: 0 !default;
 
+.my-works-list {
+  .highlighted-work {
+    color: #ffd700;
+    background-color: $gray-light;
+    border-radius: 10px;
+    padding: 2px;
+  }
+}
 .tabs {
   margin-top: $tab-margin;
   position: relative;
