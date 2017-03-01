@@ -33,8 +33,7 @@ module Hyrax
     end
 
     def index
-      @incoming = ProxyDepositRequest.where(receiving_user_id: current_user.id).reject(&:deleted_work?)
-      @outgoing = ProxyDepositRequest.where(sending_user_id: current_user.id)
+      @presenter = TransfersPresenter.new(current_user, view_context)
     end
 
     # Kicks of a job that completes the transfer. If params[:reset] is set, it will revoke
