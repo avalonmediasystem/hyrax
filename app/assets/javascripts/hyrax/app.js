@@ -84,11 +84,11 @@ Hyrax = {
     },
 
     notifications: function () {
-        var note = require('hyrax/notifications');
+        var Notifications = require('hyrax/notifications');
         $('[data-update-poll-url]').each(function () {
             var interval = $(this).data('update-poll-interval');
             var url = $(this).data('update-poll-url');
-            new note.Notifications(url, interval);
+            new Notifications(url, interval);
         });
     },
 
